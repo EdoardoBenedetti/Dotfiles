@@ -1,0 +1,27 @@
+Config 
+{ font = "xft:BitstreamVeraSansMono Nerd Font Mono:size=15:bold:antialias=true"
+, additionalFonts = []
+, bgColor = "#3b4252"
+, fgColor = "#d8dee9"
+, position = Top
+, lowerOnStart = True
+
+, commands = 
+				[ Run Date "<fc=#8fbcbb> %H:%M</fc>" "time" 100								-- Time
+				, Run Date "<fc=#ebcb8b>%d %b %Y</fc>" "date" 100								-- Date
+				, Run Network "eth0" ["-t", "<fc=#b48ead> <tx></fc> - <fc=#b48ead><rx> </fc>"] 10					-- Network Speed
+        , Run Cpu ["-t"," <total>%"] 30
+        , Run Memory ["-t"," <usedratio>%"] 30
+				, Run Com "/home/edoardo/Scripts/coretemp.sh" [] "coretemp" 30
+				, Run Com "/home/edoardo/Scripts/spotifytitle.sh" [] "spotify" 20
+				, Run Com "/home/edoardo/Scripts/xmodoro.sh" [] "pomodoro" 10
+				, Run Weather "LEMD" ["-t","<tempC>°C "] 1200
+				, Run UnsafeStdinReader
+				]
+
+, sepChar = "%"
+, alignSep = "}{"
+, template = " %UnsafeStdinReader% } %time% <action=`/home/edoardo/Scripts/pomodoro.sh`><fc=#bf616a>(%pomodoro%)</fc></action> - %date% - <fc=#8fbcbb>%LEMD%</fc> { <action=`playerctl play-pause`><fc=#a3be8c> %spotify%</fc></action> | <fc=#bf616a>%cpu%</fc> | <fc=#d08770>%coretemp%</fc> | <fc=#ebcb8b>%memory%</fc> | %eth0% "
+
+}
+
