@@ -1,7 +1,0 @@
-
-xmonad.hs:25:32: warning: [-Wtabs]
-    Tab character found here, and in 839 further locations.
-    Please use spaces instead.
-   |
-25 | import XMonad.Hooks.ManageDocks         -- Self-Explanatory
-   |                                ^
