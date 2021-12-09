@@ -80,6 +80,9 @@ alias neofetch="neofetch --colors 8 1 7 6 1 7 --ascii ~/.config/neofetch/ascii/f
 alias new="alacritty & disown && exit"
 alias pomodoro="~/Scripts/pomodoro.sh"
 alias joplin="joplin sync && joplin ls > /dev/shm/todo && joplin"
+alias qtb="qutebrowser"
+alias exa="exa -l"
+alias ls="exa -la"
 
 # Configuration
 bindkey -v
@@ -93,6 +96,8 @@ cat /dev/shm/todo
 # Oh-My-Zsh
 # Path
 export ZSH="/home/edoardo/.oh-my-zsh"
+export PATH="/home/edoardo/.cargo/bin:$PATH"
+
 
 # Theme
 ZSH_THEME="refined"
